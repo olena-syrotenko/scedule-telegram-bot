@@ -1,7 +1,9 @@
 from aiogram import Bot, Dispatcher, executor, types
+import json
 
-API_TOKEN = '5660582863:AAEfsPDuWkVPwzwpfa87HWbVXINdt1GBGHI'
-bot = Bot(token=API_TOKEN)
+f = open('.credentials.json')
+CREDENTIALS = json.load(f)
+bot = Bot(token=CREDENTIALS["TELEGRAM_TOKEN"])
 dp = Dispatcher(bot)
 
 
